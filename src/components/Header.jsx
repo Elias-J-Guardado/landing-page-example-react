@@ -7,9 +7,14 @@ function Header() {
             { /* Contenido del header */}
             <div className="absolute inset-0 bg-black/50" />
             <nav className="relative z-10">
-                <a className="text-white text-4xl font-black uppercase p-4 mt-6" style={{
-                    cursor:"pointer"
-                }}>CarGrow</a>
+                <a className="block text-white text-4xl font-black uppercase pt-4 p-4 cursor-pointer">CarGrow</a>
+                <div>
+                    <ul>
+                        <li className="text-white">¿Quines somos?</li>
+                        <li className="text-white">Servicios</li>
+                        <li className="text-white">Contacto</li>
+                    </ul>
+                </div>
             </nav>
 
             <div className="relative z-10 flex flex-col justify-end h-full p-12 py-100">

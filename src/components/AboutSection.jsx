@@ -23,7 +23,7 @@ function AboutSection() {
                      Integer nisl magna, tincidunt vel eros in, faucibus euismod ante.
                 </p>
                 <div>
-                    <img className="rounded-full h-80 w-96" src="/dan-gold-N7RiDzfF2iw-unsplash.jpg" alt="dan-gold" />
+                    <img className="rounded-full h-80 w-full" src="/dan-gold-N7RiDzfF2iw-unsplash.jpg" alt="dan-gold" />
                 </div>
             </div>
         </section>

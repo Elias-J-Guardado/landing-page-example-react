@@ -4,7 +4,7 @@ import 'aos/dist/aos.css'
 
 function Header() {
     useEffect(() => {
-        AOS.init({duration: 800})
+        AOS.init({duration: 1800})
     }, [])
 
     return (

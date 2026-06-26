@@ -4,3 +4,12 @@ body{
     font-family: "Vina Sans", sans-serif;
     font-style: normal;
 }
+
+.no-scrollbar::-webkit-scrollbar{
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}

@@ -16,7 +16,7 @@ function Services() {
                 {services.map((service, i) => (
                     <div 
                         key={i}
-                        className="w-full md:min-w-64 md:shrink-0 border border-white/20  rounded-2xl p-6 flex flex-col gap-2 shrink-0 text-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
+                        className="w-full md:min-w-64 md:shrink-0 border border-white/20  rounded-2xl p-6 flex flex-col gap-2 shrink-0 text-center bg-linear-to-r from-red-900 via-red-800 to-black"
                     >
                         <h3 className="text-white text-4xl"> {service.title} </h3>
                         <p className="text-yellow-500 text-2xl"> {service.descripcion} </p>

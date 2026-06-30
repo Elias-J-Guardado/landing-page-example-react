@@ -1,4 +1,11 @@
+import { useEffect } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 function Services() {
+    useEffect(() => {
+        AOS.init({duration: 1200})
+    }, [])
 
     const services = [
         {title: "Restauración completa", descripcion: "Devolvemos tu auto a su estado original, cada detalle cuidado al máximo."},
@@ -10,7 +17,7 @@ function Services() {
     ]
 
     return(
-        <section className="px-12 py-16">
+        <section data-aos="flip-right" className="px-12 py-16">
             <p className="text-center text-4xl mb-8">Services</p>
             <div className=" grid grid-cols-1 md:grid-cols-3 gap-3">
                 {services.map((service, i) => (

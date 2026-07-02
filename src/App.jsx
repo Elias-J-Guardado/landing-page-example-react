@@ -2,6 +2,7 @@ import { Header } from "./components/Header";
 import { AboutSection } from "./components/AboutSection";
 import { Services } from "./components/Services";
 import { Form } from "./components/Form";
+import { Footer } from "./components/Footer";
 import "./app.css";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
      <AboutSection/>
      <Services/>
      <Form/>
+     <Footer/>
     </>
   )
 }

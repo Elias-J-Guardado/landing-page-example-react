@@ -13,7 +13,7 @@ function AboutSection() {
             <div data-aos="fade-up" data-aos-duration="3000" className="text-center text-4xl mb-8">
                 ¿Quienes somos?
             </div>
-            <div className="p-2 flex justify-around items-center gap-8">
+            <div className="p-2 flex flex-col md:flex-row justify-around items-center gap-8">
                 <p data-aos="fade-right" data-ios-offset="300" data-aos-easing="ease-in-sine" className="text-left w-1/2">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Fusce volutpat tortor quam, sagittis scelerisque eros dignissim

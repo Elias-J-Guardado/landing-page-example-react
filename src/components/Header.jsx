@@ -1,10 +1,13 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css'
 
 function Header() {
+
+    const [menuOpen, setMenuOpen] = useState(false)
+
     useEffect(() => {
-        AOS.init({duration: 500})
+        AOS.init({ duration: 500 })
     }, [])
 
     return (
@@ -13,29 +16,30 @@ function Header() {
             className="relative w-full h-screen bg-cover bg-center bg-no-repeat"
         >
             { /* Contenido del header */}
-            <div
-             className="absolute inset-0 bg-black/50" />
-            <nav className="relative z-10 flex items-center justify-between">
+            <div className="absolute inset-0 bg-black/50" />
+            <nav className="relative z-10 flex items-center justify-between px-5">
                 <a data-aos="zoom-in" className="block text-white text-6xl font-black uppercase pt-4 p-4 cursor-pointer">CarGrow</a>
-                <button data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 w-10
-                justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading
-                focus:ring-2 focus:ring-neutral-ternary" aria-controls="navar-default" aria-expanded="false">
-                    <span className="sr-only">Abrir menu expandido</span>
-                    {/* <svg className="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14"/></svg> */}
-                </button>
                 
-                <div className="hidden w-full md:block md:w-auto px-4 mt-4" id="navbar">
-                    <ul className="flex gap-5">
-                        <li>
-                            <a data-aos="zoom-in" href="#" className="text-white text-2xl">¿Quines somos?</a>
-                        </li>
-                        <li >
-                            <a data-aos="zoom-in" href="#" className="text-white text-2xl">Servicios</a>
-                        </li>
-                        <li >
-                            <a data-aos="zoom-in" href="#" className="text-white text-2xl">Contacto</a>
-                        </li>
-                    </ul>
+                <button 
+                    onClick={() => setMenuOpen(!menuOpen)}
+                    className='md:hidden flex flex-col gap-1.5 cursor-pointer'
+                >
+                    <span className='w-8 h-0.5 bg-white block'/>
+                    <span className='w-8 h-0.5 bg-white block'/>
+                    <span className='w-8 h-0.5 bg-white block'/>
+                </button>
+                <div className="grid place-content-center" id="navbar">
+                        <ul className={`${menuOpen ? 'flex' : 'hidden'} md:flex flex-col md:flex-row gap-5 absolute md:relative top-16 md:top-0 right-4 md:right-0 bg-black/90 md:bg-transparent p-4 md:p-0 rounded-xl`}>
+                            <li>
+                                <a data-aos="zoom-in" href="#" className="text-white text-2xl">¿Quines somos?</a>
+                            </li>
+                            <li >
+                                <a data-aos="zoom-in" href="#" className="text-white text-2xl">Servicios</a>
+                            </li>
+                            <li >
+                                <a data-aos="zoom-in" href="#" className="text-white text-2xl">Contacto</a>
+                            </li>
+                        </ul>
                 </div>
             </nav>
 

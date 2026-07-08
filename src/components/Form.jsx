@@ -29,7 +29,7 @@ function Form() {
 
         emailjs
             .sendForm('service_pmg869e', 'template_24jt3jp', formulario.current, {
-                publicKey: '',
+                publicKey: 'hd-H15cB2v3eIPDpK',
             })
             .then(
             () => {

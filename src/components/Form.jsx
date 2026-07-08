@@ -2,10 +2,9 @@ import { useState, useEffect, useRef } from "react"
 import AOS from 'aos';
 import 'aos/dist/aos.css'
 import emailjs from "@emailjs/browser";
+import { AlertaExito } from "./AlertaExito";
 
 function Form() {
-
-
     //UseEffect AOS
     useEffect(() => {
         AOS.init({ duration: 500 })
@@ -21,6 +20,8 @@ function Form() {
         mensaje: ""
     })
 
+    const [enviado, setEnviado] = useState(false);
+
      //emailjs Api
     const formulario = useRef();
 
@@ -33,7 +34,7 @@ function Form() {
             })
             .then(
             () => {
-                console.log('Conectado')
+                setEnviado(true)
 
             },
                 (error) => {
@@ -49,6 +50,7 @@ function Form() {
     return (
         <section data-aos="fade-up" className="px-12 py-16 bg-[#0d1117]">
             <h2 className="text-center text-4xl mb-8 text-white">Contacto</h2>
+            {enviado && <AlertaExito/>}
             <form ref={formulario} onSubmit={sendEmail} className="flex flex-col gap-4 w-full max-w-3xl mx-auto" action="">
                 <div className="flex flex-col gap-2">
                     <label className="text-white/70" htmlFor="">Nombre</label>

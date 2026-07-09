@@ -3,6 +3,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'
 import emailjs from "@emailjs/browser";
 import { AlertaExito } from "./AlertaExito";
+import { AlertaError } from "./AlertaError";
 
 function Form() {
     //UseEffect AOS
@@ -21,22 +22,31 @@ function Form() {
     })
 
     const [enviado, setEnviado] = useState(false);
+    const [alertaError, setAlertaError] = useState(false);
 
-     //emailjs Api
+    //emailjs Api
     const formulario = useRef();
 
     const sendEmail = (e) => {
         e.preventDefault();
+        // setEnviado(false)
+        // setAlertaError(false)
 
+        if (!form.nombre || !form.asunto || !form.telefono || !form.correo || !form.mensaje) {
+            setAlertaError(true)
+            setTimeout(() => {
+                setAlertaError(false)
+            }, 3000);
+            return;
+        }
         emailjs
             .sendForm('service_pmg869e', 'template_24jt3jp', formulario.current, {
                 publicKey: 'hd-H15cB2v3eIPDpK',
             })
             .then(
-            () => {
-                setEnviado(true)
-
-            },
+                () => {
+                    setEnviado(true)
+                },
                 (error) => {
                     console.log('Operación fallida...', error.text);
                 },
@@ -50,7 +60,7 @@ function Form() {
     return (
         <section data-aos="fade-up" className="px-12 py-16 bg-[#0d1117]">
             <h2 className="text-center text-4xl mb-8 text-white">Contacto</h2>
-            {enviado && <AlertaExito/>}
+            {enviado && <AlertaExito />}
             <form ref={formulario} onSubmit={sendEmail} className="flex flex-col gap-4 w-full max-w-3xl mx-auto" action="">
                 <div className="flex flex-col gap-2">
                     <label className="text-white/70" htmlFor="">Nombre</label>
@@ -65,10 +75,11 @@ function Form() {
                 <label className="text-white/70" htmlFor="">Correo</label>
                 <input type="email" name="correo" className="bg-transparent border border-white/20 rounded-xl px-4 text-white" type="text" value={form.correo} name="correo" placeholder="JhonDoe@mail.com" onChange={handleChange} />
                 <label className="text-white/70" htmlFor="">Mensaje</label>
-                <textarea className="bg-transparent border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white/60 resize-none h-32" type="text" name="mensaje" value={form.mensaje} placeholder="Mensaje" onChange={handleChange} />
+                <textarea name="mensaje" className="bg-transparent border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white/60 resize-none h-32" type="text" name="mensaje" value={form.mensaje} placeholder="Mensaje" onChange={handleChange} />
                 <div className="flex items-center justify-center">
-                    <input type="submit" name="mensaje" className="rounded-xl cursor-pointer text-white bg-linear-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-linear-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:ring-blue-800 font-medium rounded-base px-4 py-2.5 text-center leading-5 text-xl" value="Enviar" />
+                    <input type="submit" className="rounded-xl cursor-pointer text-white bg-linear-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-linear-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:ring-blue-800 font-medium rounded-base px-4 py-2.5 text-center leading-5 text-xl" value="Enviar" />
                 </div>
+                    {alertaError && <AlertaError/>}
             </form>
         </section>
     )

@@ -19,16 +19,16 @@ function Header() {
             <div className="absolute inset-0 bg-black/50" />
             <nav className="relative z-10 flex items-center justify-between px-5">
                 <a data-aos="zoom-in" className="block text-white text-6xl font-black uppercase pt-4 p-4 cursor-pointer">CarGrow</a>
-                
-                <button 
-                    onClick={() => setMenuOpen(!menuOpen)}
-                    className='md:hidden flex flex-col gap-1.5 cursor-pointer'
-                >
-                    <span className='w-8 h-0.5 bg-white block'/>
-                    <span className='w-8 h-0.5 bg-white block'/>
-                    <span className='w-8 h-0.5 bg-white block'/>
-                </button>
-                <div className="grid place-content-center" id="navbar">
+                <div className='flex items-center gap-4'>
+                    <button
+                        onClick={() => setMenuOpen(!menuOpen)}
+                        className='md:hidden flex flex-col gap-1.5 cursor-pointer'
+                    >
+                        <span className='w-8 h-0.5 bg-white block' />
+                        <span className='w-8 h-0.5 bg-white block' />
+                        <span className='w-8 h-0.5 bg-white block' />
+                    </button>
+                    <div className="grid place-content-center" id="navbar">
                         <ul className={`${menuOpen ? 'flex' : 'hidden'} md:flex flex-col md:flex-row gap-5 absolute md:relative top-16 md:top-0 right-4 md:right-0 bg-black/90 md:bg-transparent p-4 md:p-0 rounded-xl`}>
                             <li>
                                 <a data-aos="zoom-in" href="#" className="text-white text-2xl">¿Quines somos?</a>
@@ -40,6 +40,7 @@ function Header() {
                                 <a data-aos="zoom-in" href="#" className="text-white text-2xl">Contacto</a>
                             </li>
                         </ul>
+                    </div>
                 </div>
             </nav>
 

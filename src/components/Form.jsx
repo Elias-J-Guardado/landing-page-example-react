@@ -46,6 +46,9 @@ function Form() {
             .then(
                 () => {
                     setEnviado(true)
+                    setTimeout(() => {
+                        setEnviado(false)
+                    }, 3000);
                 },
                 (error) => {
                     console.log('Operación fallida...', error.text);
@@ -60,7 +63,7 @@ function Form() {
     return (
         <section data-aos="fade-up" className="px-12 py-16 bg-[#0d1117]">
             <h2 className="text-center text-4xl mb-8 text-white">Contacto</h2>
-            {enviado && <AlertaExito />}
+
             <form ref={formulario} onSubmit={sendEmail} className="flex flex-col gap-4 w-full max-w-3xl mx-auto" action="">
                 <div className="flex flex-col gap-2">
                     <label className="text-white/70" htmlFor="">Nombre</label>
@@ -79,7 +82,8 @@ function Form() {
                 <div className="flex items-center justify-center">
                     <input type="submit" className="rounded-xl cursor-pointer text-white bg-linear-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-linear-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:ring-blue-800 font-medium rounded-base px-4 py-2.5 text-center leading-5 text-xl" value="Enviar" />
                 </div>
-                    {alertaError && <AlertaError/>}
+                {enviado && <AlertaExito />}
+                {alertaError && <AlertaError />}
             </form>
         </section>
     )

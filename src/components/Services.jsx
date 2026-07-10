@@ -11,7 +11,7 @@ function Services() {
         {title: "Restauración completa", descripcion: "Devolvemos tu auto a su estado original, cada detalle cuidado al máximo."},
         {title: "Pintura y Carrocería", descripcion: "Corrección de abolladuras y pintura personalizada con acabado profesional."},
         {title: "Tapicería", descripcion: "Restauración de interiores, asientos y techo con materiales de calidad."},
-        {title: "Motor y Mećanica", descripcion: "Reconstrucción de motor y transmisión para máximo rendimiento."},
+        {title: "Motor y Mécanica", descripcion: "Reconstrucción de motor y transmisión para máximo rendimiento."},
         {title: "Llantas y Mécanica", descripcion: "Alineación, balanceo y suspensión deportiva a tu medida."},
         {title: "Detailing", descripcion: "Pulido, encerado y protección de pintura para un acabado impecable."},
     ]

@@ -1,16 +1,92 @@
-# React + Vite
+# Cargrow
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una muesta de landing page realizada en react
 
-Currently, two official plugins are available:
+## Tabala de contenidos
+- [Descripción](#descripción)
+- [Instalación](#instalación)
+- [Estructura](#estructura)
+- [Uso](#uso)
+- [Tecnologías](#tecnologías)
+- [Referencias](#referencias)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Descripción
+Landing Page que permite la visualización de multimedia y el envio de formularios.
 
-## React Compiler
+## Instalación
+1. Clona el repositorio
+```bash
+    git clone https://github.com/Elias-J-Guardado/landing-page-example-react.git
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+2. Instala dependencias
+ ```bash
+    pnpm dev
+```
 
-## Expanding the ESLint configuration
+3. Inicia el servidor de desarrollo
+```bash
+    git clone https://github.com/Elias-J-Guardado/landing-page-example-react.git
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Estructura
+```
+.
+├── eslint.config.js
+├── index.html
+├── package.json
+├── pnpm-lock.yaml
+├── public
+│   ├── dan-gold-N7RiDzfF2iw-unsplash.jpg
+│   └── nelli-chaitanya-9yu5JZygjv0-unsplash.jpg
+├── README.md
+├── src
+│   ├── app.css
+│   ├── App.jsx
+│   ├── components
+│   │   ├── AboutSection.jsx
+│   │   ├── AlertaError.jsx
+│   │   ├── AlertaExito.jsx
+│   │   ├── Footer.jsx
+│   │   ├── Form.jsx
+│   │   ├── Header.jsx
+│   │   └── Services.jsx
+│   ├── helpers
+│   │   └── index.js
+│   ├── index.css
+│   └── main.jsx
+└── vite.config.js
+```
+
+## Uso
+Una vez el servidor de desarrollo esté corriendo, abre `http://localhost:5173` en tu navegador.
+
+La landing page cuenta con las siguientes secciones:
+- **Header** — presentación principal con navegación
+- **¿Quiénes somos?** — información sobre el negocio
+- **Servicios** — catálogo de servicios ofrecidos
+- **Contacto** — formulario funcional que envía correos mediante EmailJS
+
+### Configurar el formulario de contacto
+Para que el envío de correos funcione, necesitas tu propia cuenta de [EmailJS](https://www.emailjs.com/) y reemplazar los siguientes valores en `src/components/Form.jsx`:
+
+```js
+emailjs.sendForm('TU_SERVICE_ID', 'TU_TEMPLATE_ID', formulario.current, {
+    publicKey: 'TU_PUBLIC_KEY',
+})
+```
+
+
+## Tecnologías
+- [React](https://react.dev/)
+- [Vite](https://vitejs.dev/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [AOS](https://michalsnik.github.io/aos/)
+- [EmailJS](https://www.emailjs.com/)
+
+
+## Referencias
+
+- [Hero image](https://unsplash.com/es/fotos/un-coche-amarillo-circulando-por-una-calle-de-noche-9yu5JZygjv0)
+
+- [AboutUs image](https://unsplash.com/es/fotos/fotografia-de-enfoque-superficial-de-volkswagen-beetle-naranja-N7RiDzfF2iw)

@@ -4,7 +4,7 @@ import 'aos/dist/aos.css'
 import emailjs from "@emailjs/browser";
 import { AlertaExito } from "./AlertaExito";
 import { AlertaError } from "./AlertaError";
-import { EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, EMAILJS_PUBLIC_KEY } from "../config/env";
+import { EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, EMAILJS_PUBLIC_KEY } from "../config/env.js";
 
 function Form() {
     //UseEffect AOS

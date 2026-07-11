@@ -61,7 +61,7 @@ function Form() {
     }
 
     return (
-        <section data-aos="fade-up" className="px-12 py-16 bg-[#0d1117]">
+        <section id="contacto" data-aos="fade-up" className="px-12 py-16 bg-[#0d1117]">
             <h2 className="text-center text-4xl mb-8 text-white">Contacto</h2>
 
             <form ref={formulario} onSubmit={sendEmail} className="flex flex-col gap-4 w-full max-w-3xl mx-auto" action="">

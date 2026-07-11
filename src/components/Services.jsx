@@ -17,7 +17,7 @@ function Services() {
     ]
 
     return(
-        <section data-aos="flip-right" className="px-12 py-16">
+        <section id="servicios" data-aos="flip-right" className="px-12 py-16">
             <p className="text-center text-4xl mb-8">Services</p>
             <div className=" grid grid-cols-1 md:grid-cols-3 gap-3">
                 {services.map((service, i) => (

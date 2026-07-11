@@ -31,13 +31,13 @@ function Header() {
                     <div className="grid place-content-center" id="navbar">
                         <ul className={`${menuOpen ? 'flex' : 'hidden'} md:flex flex-col md:flex-row gap-5 absolute md:relative top-16 md:top-0 right-4 md:right-0 bg-black/90 md:bg-transparent p-4 md:p-0 rounded-xl`}>
                             <li>
-                                <a data-aos="zoom-in" href="#" className="text-white text-2xl">¿Quines somos?</a>
+                                <a data-aos="zoom-in" href="#about" className="text-white text-2xl">¿Quines somos?</a>
                             </li>
                             <li >
-                                <a data-aos="zoom-in" href="#" className="text-white text-2xl">Servicios</a>
+                                <a data-aos="zoom-in" href="#servicios" className="text-white text-2xl">Servicios</a>
                             </li>
                             <li >
-                                <a data-aos="zoom-in" href="#" className="text-white text-2xl">Contacto</a>
+                                <a data-aos="zoom-in" href="#contacto" className="text-white text-2xl">Contacto</a>
                             </li>
                         </ul>
                     </div>
@@ -49,7 +49,7 @@ function Header() {
                     Restauraciones Profesionales
                 </h1>
                 <p data-aos="zoom-in" className="text-white/70 mt-2 text-2xl">Restauraciones al mejor precio</p>
-                <a data-aos="zoom-in" className="mt-6 bg-[#151d36] text-white p-4 rounded-full uppercase font-bold w-fit cursor-pointer text-center 
+                <a href='#contacto' data-aos="zoom-in" className="mt-6 bg-[#151d36] text-white p-4 rounded-full uppercase font-bold w-fit cursor-pointer text-center 
                 text-2xl hover:bg-[#1C2B47] focus:outline-offset-2 focus:outline-bg[#203052]">
                     Agenda tu cita
                 </a>

@@ -9,7 +9,7 @@ function AboutSection() {
     }, [])
 
     return (
-        <section className="px-12 py-16">
+        <section id="about" className="px-12 py-16">
             <div data-aos="fade-up" data-aos-duration="3000" className="text-center text-4xl mb-8">
                 ¿Quienes somos?
             </div>

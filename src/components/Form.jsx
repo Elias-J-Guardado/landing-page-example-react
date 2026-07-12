@@ -4,6 +4,7 @@ import 'aos/dist/aos.css'
 import emailjs from "@emailjs/browser";
 import { AlertaExito } from "./AlertaExito";
 import { AlertaError } from "./AlertaError";
+import { EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, EMAILJS_PUBLIC_KEY } from "../config/env.js";
 
 function Form() {
     //UseEffect AOS
@@ -40,8 +41,8 @@ function Form() {
             return;
         }
         emailjs
-            .sendForm('service_pmg869e', 'template_24jt3jp', formulario.current, {
-                publicKey: 'hd-H15cB2v3eIPDpK',
+            .sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formulario.current, {
+                publicKey: EMAILJS_PUBLIC_KEY,
             })
             .then(
                 () => {
